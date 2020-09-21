@@ -8,13 +8,13 @@
 
 #define N 9
 #define Nsqrt 3
-#define fillGrade 1
+#define fillGrade 3
 
 using namespace std;
 
 bool checkBoard(int grid[N][N], int row, int col, int k) {
-    for(int i = 0; i < N; i++) {
-        if(grid[i][col] == k || grid[row][i] == k || grid[Nsqrt * (int)(row / Nsqrt) + (int)(i / Nsqrt)][Nsqrt * (int)(col / Nsqrt) + i%Nsqrt] == k) {
+    for (int i = 0; i < N; i++) {
+        if (grid[i][col] == k || grid[row][i] == k || grid[((int)floor(row / Nsqrt) * Nsqrt) + ((int)floor((i) / Nsqrt))][((int)floor(col / Nsqrt) * Nsqrt) + (i % Nsqrt)] == k) {
             return false;
         }
     }
@@ -38,6 +38,8 @@ void writeSolved(string name, int grid[N][N]) {
 
 void createSudoku(string name) {
 
+    // 16 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
+    // 9 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
     int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
 
     srand (time(NULL));

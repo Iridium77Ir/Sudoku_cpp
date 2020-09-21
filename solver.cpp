@@ -27,7 +27,7 @@ void writeSolved(string name, int grid[N][N]) {
 
 bool checkBoard(int grid[N][N], int row, int col, int k) {
     for (int i = 0; i < N; i++) {
-        if (grid[i][col] == k || grid[row][i] == k || grid[Nsqrt * (int)(row / Nsqrt) + (int)(i / Nsqrt)][Nsqrt * (int)(col / Nsqrt) + i % Nsqrt] == k) {
+        if (grid[i][col] == k || grid[row][i] == k || grid[((int)floor(row / Nsqrt) * Nsqrt) + ((int)floor((i) / Nsqrt))][((int)floor(col / Nsqrt) * Nsqrt) + (i % Nsqrt)] == k) {
             return false;
         }
     }
@@ -57,7 +57,10 @@ bool solveSudoku(int grid[N][N]) {
 }
 
 void openAndSolve(string name) {
-    int grid[N][N] = { {}, {}, {}, {}, {}, {}, {}, {}, {} };
+    // 16 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
+    // 9 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
+    
+    int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
 
     string line;
     ifstream sudoku("sudokus/" + name);

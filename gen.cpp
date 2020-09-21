@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 9
-#define Nsqrt 3
+#define N 16
+#define Nsqrt 4
 #define fillGrade 3
 
 using namespace std;
@@ -40,7 +40,7 @@ void createSudoku(string name) {
 
     // 16 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
     // 9 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
-    int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
+    int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
 
     srand (time(NULL));
 

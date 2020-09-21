@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <vector>
 
-#define N 9
-#define Nsqrt 3
+#define N 16
+#define Nsqrt 4
 
 using namespace std;
 
@@ -60,7 +60,7 @@ void openAndSolve(string name) {
     // 16 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
     // 9 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
     
-    int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
+    int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
 
     string line;
     ifstream sudoku("sudokus/" + name);

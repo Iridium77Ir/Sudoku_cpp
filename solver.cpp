@@ -26,8 +26,10 @@ void writeSolved(string name, int grid[N][N]) {
 }
 
 bool checkBoard(int grid[N][N], int row, int col, int k) {
+    int rowoffset = Nsqrt * floor(row / Nsqrt);
+    int coloffset = Nsqrt * floor(col / Nsqrt);
     for (int i = 0; i < N; i++) {
-        if (grid[i][col] == k || grid[row][i] == k || grid[((int)floor(row / Nsqrt) * Nsqrt) + ((int)floor((i) / Nsqrt))][((int)floor(col / Nsqrt) * Nsqrt) + (i % Nsqrt)] == k) {
+        if (grid[i][col] == k || grid[row][i] == k || grid[rowoffset + (int)floor(i / Nsqrt)][coloffset + i%Nsqrt] == k) {
             return false;
         }
     }

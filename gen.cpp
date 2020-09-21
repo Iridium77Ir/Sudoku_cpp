@@ -8,7 +8,7 @@
 
 #define N 16
 #define Nsqrt 4
-#define fillGrade 3
+#define fillGrade 5
 
 using namespace std;
 
@@ -42,8 +42,6 @@ void createSudoku(string name) {
     // 9 - int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}};
     int grid[N][N] = {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}};
 
-    srand (time(NULL));
-
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < N; j++) {
             int should = (int)(rand() % fillGrade + 1);
@@ -61,6 +59,7 @@ void createSudoku(string name) {
 }
 
 int main(int argc, char *argv[]) {
+    srand(time(NULL));
     for(int i = 0; i < stoi(argv[1]); i++) {
         createSudoku(("s"+ to_string(i)));
     }

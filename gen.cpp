@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 16
-#define Nsqrt 4
+#define N 9
+#define Nsqrt 3
 #define fillGrade 5
 
 using namespace std;
